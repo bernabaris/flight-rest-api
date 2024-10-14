@@ -27,5 +27,4 @@ public class FlightController {
         Flight savedFlight = flightService.addFlight(Converter.flightDtoToModel(flightDto));
         return ResponseEntity.ok(Converter.flightModelToDto(savedFlight));
     }
-
 }

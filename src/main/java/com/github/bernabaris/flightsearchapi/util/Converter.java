@@ -65,15 +65,15 @@ public class Converter {
     public static FlightDto flightModelToDto(Flight flight){
         FlightDto flightDto = new FlightDto();
         flightDto.setId(flight.getId());
-        flightDto.setDepartureAirport(airportDtoToModel(flight.getDepartureAirport()));
-        flightDto.setArrivalAirport(airportDtoToModel(flight.getArrivalAirport()));
+        flightDto.setDepartureAirport(airportModelToDto(flight.getDepartureAirport()));
+        flightDto.setArrivalAirport(airportModelToDto(flight.getArrivalAirport()));
         flightDto.setDepartureTime(flight.getDepartureTime());
         flightDto.setArrivalTime(flight.getArrivalTime());
         flightDto.setPrice(flight.getPrice());
         return flightDto;
     }
 
-    public static AirportDto airportDtoToModel(Airport airport){
+    public static AirportDto airportModelToDto(Airport airport){
         AirportDto airportDto = new AirportDto();
         airportDto.setId(airport.getId());
         airportDto.setCityName(airport.getCityName());
