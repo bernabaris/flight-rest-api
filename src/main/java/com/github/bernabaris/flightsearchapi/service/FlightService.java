@@ -7,6 +7,7 @@ import com.github.bernabaris.flightsearchapi.util.Converter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,6 +23,16 @@ public class FlightService {
 
     public List<Flight> getAllFlights() {
         return flightRepository.findAll().stream().map(Converter::flightEntityToModel).toList();
+    }
+
+    public List<Flight> addFlights(List<Flight> flights) {
+        List<FlightEntity> flightEntities = flights.stream().map(Converter::flightModelToEntity).toList();
+        List<FlightEntity> savedFlights = flightRepository.saveAll(flightEntities);
+        return savedFlights.stream().map(Converter::flightEntityToModel).toList();
+    }
+
+    public Flight getFlightById(Long id) {
+        return flightRepository.findById(id).stream().map(Converter::flightEntityToModel).toList().get(0);
     }
 
 }
