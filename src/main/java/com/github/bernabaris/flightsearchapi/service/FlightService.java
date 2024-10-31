@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class FlightService {
@@ -36,6 +38,16 @@ public class FlightService {
 
     public Flight getFlightById(Long id) {
         return flightRepository.findById(id).stream().map(Converter::flightEntityToModel).toList().get(0);
+    }
+
+    public Flight deleteFlight(Long id) {
+        Optional<FlightEntity> flightEntity = flightRepository.findById(id);
+        if (flightEntity.isPresent()) {
+            flightRepository.deleteById(id);
+            return Converter.flightEntityToModel(flightEntity.get());
+        } else {
+            throw new NoSuchElementException("Flight not found with id: " + id);
+        }
     }
 
     public Flight updateFlight(Flight flight, Long id) {

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -52,6 +53,12 @@ public class FlightController {
         Flight flight = flightService.getFlightById(id);
         FlightDto flightDto = Converter.flightModelToDto(flight);
         return ResponseEntity.ok(flightDto);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<FlightDto> deleteFlight(@PathVariable Long id) {
+        Flight flight = flightService.deleteFlight(id);
+        return ResponseEntity.ok(Converter.flightModelToDto(flight));
     }
 
     @PutMapping("/update")
