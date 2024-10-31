@@ -10,7 +10,9 @@ import com.github.bernabaris.flightsearchapi.model.Flight;
 public class Converter {
     public static FlightEntity flightModelToEntity(Flight flight){
         FlightEntity flightEntity = new FlightEntity();
-        flightEntity.setId(flight.getId());
+        if(flight.getId() != null){
+            flightEntity.setId(flight.getId());
+        }
         flightEntity.setDepartureAirport(airportModelToEntity(flight.getDepartureAirport()));
         flightEntity.setArrivalAirport(airportModelToEntity(flight.getArrivalAirport()));
         flightEntity.setDepartureTime(flight.getDepartureTime());

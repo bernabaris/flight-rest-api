@@ -35,7 +35,7 @@ public class AirportController {
         return ResponseEntity.ok(savedAirports.stream().map(Converter::airportModelToDto).toList());
     }
 
-    @GetMapping("/allFlights")
+    @GetMapping("/allAirports")
     public ResponseEntity<List<AirportDto>> getAllAirports() {
         List<AirportDto> airportDtos = airportService.getAllAirports()
                 .stream()

@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Data
 public class Flight {
-    private long id;
+    private Long id;
     private Airport departureAirport;
     private Airport arrivalAirport;
     private LocalDateTime departureTime;

@@ -13,11 +13,11 @@ public class FlightEntity {
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      private long id;
 
-     @ManyToOne
+     @ManyToOne(fetch = FetchType.EAGER)
      @JoinColumn(name = "departure_airport_id", referencedColumnName = "id")
      private AirportEntity departureAirport;
 
-     @ManyToOne
+     @ManyToOne(fetch = FetchType.EAGER)
      @JoinColumn(name = "arrival_airport_id", referencedColumnName = "id")
      private AirportEntity arrivalAirport;
 
