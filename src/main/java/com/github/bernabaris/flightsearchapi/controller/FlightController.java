@@ -63,7 +63,7 @@ public class FlightController {
 
     @PutMapping("/update")
     public ResponseEntity<FlightDto> updateFlight(@RequestBody FlightDto flightDto) {
-        Flight updatedFlight = flightService.updateFlight(Converter.flightDtoToModel(flightDto), flightDto.getId());
+        Flight updatedFlight = flightService.updateFlight(Converter.flightDtoToModel(flightDto));
         return ResponseEntity.ok(Converter.flightModelToDto(updatedFlight));
     }
 }

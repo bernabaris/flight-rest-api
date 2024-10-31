@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -31,6 +33,16 @@ public class AirportService {
         List<AirportEntity> airportEntities = airports.stream().map(Converter::airportModelToEntity).toList();
         List<AirportEntity> savedAirports = airportRepository.saveAll(airportEntities);
         return savedAirports.stream().map(Converter::airportEntityToModel).collect(Collectors.toList());
+    }
+
+    public Airport deleteAirport(Long id){
+        Optional<AirportEntity> airportEntity = airportRepository.findById(id);
+        if (airportEntity.isPresent()) {
+            airportRepository.deleteById(id);
+            return Converter.airportEntityToModel(airportEntity.get());
+        } else {
+            throw new NoSuchElementException("Airport not found with id: " + id);
+        }
     }
 
 }

@@ -50,16 +50,14 @@ public class FlightService {
         }
     }
 
-    public Flight updateFlight(Flight flight, Long id) {
-        FlightEntity flightEntity = flightRepository.findById(id).orElse(null);
-        flightEntity.setId(flight.getId());
-        flightEntity.setDepartureAirport(Converter.airportModelToEntity(flight.getDepartureAirport()));
-        flightEntity.setArrivalAirport(Converter.airportModelToEntity(flight.getArrivalAirport()));
-        flightEntity.setDepartureTime(flight.getDepartureTime());
-        flightEntity.setArrivalTime(flight.getArrivalTime());
-        flightEntity.setPrice(flight.getPrice());
-        flightRepository.save(flightEntity);
-        return Converter.flightEntityToModel(flightEntity);
+    public Flight updateFlight(Flight flight) {
+        Optional<FlightEntity> flightEntity = flightRepository.findById(flight.getId());
+        if (flightEntity.isPresent()) {
+            flightRepository.save(Converter.flightModelToEntity(flight));
+            return Converter.flightEntityToModel(flightEntity.get());
+        } else {
+            throw new NoSuchElementException("Flight not found with id: " + flight.getId());
+        }
     }
 }
 

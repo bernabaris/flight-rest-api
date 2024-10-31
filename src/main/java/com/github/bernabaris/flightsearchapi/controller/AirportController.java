@@ -43,4 +43,10 @@ public class AirportController {
                 .collect(Collectors.toList());
         return ResponseEntity.ok(airportDtos);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<AirportDto> deleteAirport(@PathVariable Long id) {
+        Airport airport = airportService.deleteAirport(id);
+        return ResponseEntity.ok(Converter.airportModelToDto(airport));
+    }
 }
