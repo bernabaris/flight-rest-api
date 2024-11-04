@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -12,6 +13,6 @@ import java.time.LocalDateTime;
 public class FlightSearchInputDto {
     private AirportDto departureAirport;
     private AirportDto arrivalAirport;
-    private LocalDateTime departureTime;
-    private LocalDateTime arrivalTime;
+    private LocalDate departureDate;
+    private LocalDate returnDate;
 }

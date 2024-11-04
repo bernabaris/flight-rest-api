@@ -1,4 +1,4 @@
-package com.github.bernabaris.flightsearchapi;
+package com.github.bernabaris.flightsearchapi.service;
 
 import com.github.bernabaris.flightsearchapi.dto.FlightDto;
 import com.github.bernabaris.flightsearchapi.dto.FlightSearchInputDto;
@@ -10,9 +10,13 @@ import com.github.bernabaris.flightsearchapi.util.Converter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class FlightService {
@@ -65,6 +69,36 @@ public class FlightService {
         List<FlightDto> departureFlight = search
 
     }*/
+
+    public FlightSearchResponseDto searchFlight(FlightSearchInputDto flightSearchInputDto) {
+        FlightSearchResponseDto flightSearchResponseDto = new FlightSearchResponseDto();
+
+        LocalDate departureDate = flightSearchInputDto.getDepartureDate();
+        LocalDateTime departureStart = departureDate.atStartOfDay();
+        LocalDateTime departureEnd = departureDate.atTime(LocalTime.MAX);
+
+        List<FlightEntity> departureFlightEntities = flightRepository.searchFlights(
+                flightSearchInputDto.getDepartureAirport().getId(),
+                flightSearchInputDto.getArrivalAirport().getId(),
+                departureStart,
+                departureEnd);
+        List<Flight> departureFlights = departureFlightEntities.stream().map(Converter::flightEntityToModel).toList();
+        flightSearchResponseDto.setDepartureFlights(departureFlights.stream().map(Converter::flightModelToDto).toList());
+
+        if (flightSearchInputDto.getReturnDate() != null) {
+            LocalDateTime returnStart = flightSearchInputDto.getReturnDate().atStartOfDay();
+            LocalDateTime returnEnd = flightSearchInputDto.getReturnDate().atTime(LocalTime.MAX);
+            List<FlightEntity> returnFlightEntities = flightRepository.searchFlights(
+                    flightSearchInputDto.getDepartureAirport().getId(),
+                    flightSearchInputDto.getArrivalAirport().getId(),
+                    returnStart,
+                    returnEnd);
+            List<Flight> returnFlights = returnFlightEntities.stream().map(Converter::flightEntityToModel).toList();
+            flightSearchResponseDto.setReturnFlights(returnFlights.stream().map(Converter::flightModelToDto).toList());
+        }
+        return flightSearchResponseDto;
+
+    }
 }
 
 

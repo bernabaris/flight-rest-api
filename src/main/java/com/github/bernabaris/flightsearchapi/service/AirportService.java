@@ -1,4 +1,4 @@
-package com.github.bernabaris.flightsearchapi;
+package com.github.bernabaris.flightsearchapi.service;
 
 import com.github.bernabaris.flightsearchapi.entity.AirportEntity;
 import com.github.bernabaris.flightsearchapi.model.Airport;
@@ -6,9 +6,7 @@ import com.github.bernabaris.flightsearchapi.repository.AirportRepository;
 import com.github.bernabaris.flightsearchapi.util.Converter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;

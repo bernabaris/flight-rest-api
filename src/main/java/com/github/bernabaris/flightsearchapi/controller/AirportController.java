@@ -2,7 +2,7 @@ package com.github.bernabaris.flightsearchapi.controller;
 
 import com.github.bernabaris.flightsearchapi.dto.AirportDto;
 import com.github.bernabaris.flightsearchapi.model.Airport;
-import com.github.bernabaris.flightsearchapi.AirportService;
+import com.github.bernabaris.flightsearchapi.service.AirportService;
 import com.github.bernabaris.flightsearchapi.util.Converter;
 
 import jakarta.validation.Valid;

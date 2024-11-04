@@ -12,13 +12,13 @@ import java.util.List;
 public interface FlightRepository extends JpaRepository<FlightEntity, Long> {
 
     @Query("SELECT f FROM FlightEntity f " +
-            "WHERE f.departureAirport.id = :departureCode " +
-            "AND f.arrivalAirport.id = :arrivalCode " +
+            "WHERE f.departureAirport.id = :departureId " +
+            "AND f.arrivalAirport.id = :arrivalId " +
             "AND f.departureTime >= :startTime " +
             "AND f.arrivalTime < :endTime")
-    List<Flight> searchFlights(
-            @Param("departureCode") String departureCode,
-            @Param("arrivalCode") String arrivalCode,
+    List<FlightEntity> searchFlights(
+            @Param("departureId") Long departureId,
+            @Param("arrivalId") Long arrivalId,
             @Param("startTime") LocalDateTime startTime,
             @Param("endTime") LocalDateTime endTime);
 
