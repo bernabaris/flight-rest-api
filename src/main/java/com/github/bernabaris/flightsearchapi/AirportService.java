@@ -1,4 +1,4 @@
-package com.github.bernabaris.flightsearchapi.service;
+package com.github.bernabaris.flightsearchapi;
 
 import com.github.bernabaris.flightsearchapi.entity.AirportEntity;
 import com.github.bernabaris.flightsearchapi.model.Airport;

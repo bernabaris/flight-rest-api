@@ -16,6 +16,6 @@ public class AirportEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "city")
+    @Column(name = "city", unique = true, nullable = false)
     private String cityName;
 }

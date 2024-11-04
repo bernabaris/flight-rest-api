@@ -1,18 +1,14 @@
 package com.github.bernabaris.flightsearchapi.controller;
 
 import com.github.bernabaris.flightsearchapi.dto.FlightDto;
-import com.github.bernabaris.flightsearchapi.entity.FlightEntity;
-import com.github.bernabaris.flightsearchapi.model.Airport;
 import com.github.bernabaris.flightsearchapi.model.Flight;
-import com.github.bernabaris.flightsearchapi.service.FlightService;
+import com.github.bernabaris.flightsearchapi.FlightService;
 import com.github.bernabaris.flightsearchapi.util.Converter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController

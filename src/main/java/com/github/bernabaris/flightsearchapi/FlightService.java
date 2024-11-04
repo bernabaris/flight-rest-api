@@ -1,16 +1,15 @@
-package com.github.bernabaris.flightsearchapi.service;
+package com.github.bernabaris.flightsearchapi;
 
-import com.github.bernabaris.flightsearchapi.entity.AirportEntity;
+import com.github.bernabaris.flightsearchapi.dto.FlightDto;
+import com.github.bernabaris.flightsearchapi.dto.FlightSearchInputDto;
+import com.github.bernabaris.flightsearchapi.dto.FlightSearchResponseDto;
 import com.github.bernabaris.flightsearchapi.entity.FlightEntity;
-import com.github.bernabaris.flightsearchapi.model.Airport;
 import com.github.bernabaris.flightsearchapi.model.Flight;
-import com.github.bernabaris.flightsearchapi.repository.AirportRepository;
 import com.github.bernabaris.flightsearchapi.repository.FlightRepository;
 import com.github.bernabaris.flightsearchapi.util.Converter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -59,6 +58,13 @@ public class FlightService {
             throw new NoSuchElementException("Flight not found with id: " + flight.getId());
         }
     }
+
+  /*public Flight getFlightsBySearch(FlightSearchInputDto flightSearchInputDto) {
+        FlightSearchResponseDto flightSearchResponseDto = new FlightSearchResponseDto();
+        //departure flights always needed
+        List<FlightDto> departureFlight = search
+
+    }*/
 }
 
 

@@ -23,7 +23,9 @@ public class Converter {
 
     public static AirportEntity airportModelToEntity(Airport airport){
         AirportEntity airportEntity = new AirportEntity();
-        airportEntity.setId(airport.getId());
+        if(airport.getId() != null) {
+            airportEntity.setId(airport.getId());
+        }
         airportEntity.setCityName(airport.getCityName());
         return airportEntity;
     }
