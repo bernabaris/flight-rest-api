@@ -1,6 +1,8 @@
 package com.github.bernabaris.flightsearchapi.controller;
 
 import com.github.bernabaris.flightsearchapi.dto.FlightDto;
+import com.github.bernabaris.flightsearchapi.dto.FlightSearchInputDto;
+import com.github.bernabaris.flightsearchapi.dto.FlightSearchResponseDto;
 import com.github.bernabaris.flightsearchapi.model.Flight;
 import com.github.bernabaris.flightsearchapi.service.FlightService;
 import com.github.bernabaris.flightsearchapi.util.Converter;
@@ -61,5 +63,11 @@ public class FlightController {
     public ResponseEntity<FlightDto> updateFlight(@RequestBody FlightDto flightDto) {
         Flight updatedFlight = flightService.updateFlight(Converter.flightDtoToModel(flightDto));
         return ResponseEntity.ok(Converter.flightModelToDto(updatedFlight));
+    }
+
+    @PostMapping("/search")
+    public ResponseEntity<FlightSearchResponseDto> searchFlights(@RequestBody FlightSearchInputDto flightSearchInputDto) {
+        FlightSearchResponseDto flightSearchResponseDto = flightService.searchFlight(flightSearchInputDto);
+        return ResponseEntity.ok(flightSearchResponseDto);
     }
 }

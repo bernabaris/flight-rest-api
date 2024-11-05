@@ -63,13 +63,6 @@ public class FlightService {
         }
     }
 
-  /*public Flight getFlightsBySearch(FlightSearchInputDto flightSearchInputDto) {
-        FlightSearchResponseDto flightSearchResponseDto = new FlightSearchResponseDto();
-        //departure flights always needed
-        List<FlightDto> departureFlight = search
-
-    }*/
-
     public FlightSearchResponseDto searchFlight(FlightSearchInputDto flightSearchInputDto) {
         FlightSearchResponseDto flightSearchResponseDto = new FlightSearchResponseDto();
 
