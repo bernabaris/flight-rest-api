@@ -24,12 +24,15 @@
 1. Clone the repository:
    ```bash
    git clone https://github.com/bernabaris/flight-rest-api.git
-2. Navigate to the project directory:
+2. Navigate to directory for MariaDB setup with Docker:
    ```sh
-   cd flight-rest-api
-3. Build the project with Maven:
+   cd flight-rest-api/docker/mariadb
+3. Start the MariaDB container by running:
+   ```sh
+   docker compose up -d  
+4. Build the project with Maven:
    ```sh
    mvn clean install
-4. Run the application:
+5. Run the application:
    ```sh
    mvn spring-boot:run
