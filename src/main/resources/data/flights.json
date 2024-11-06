@@ -1,0 +1,72 @@
+[
+  {
+    "departureAirport": "JFK",
+    "arrivalAirport": "LAX",
+    "departureTime": "2024-11-03T12:34:56",
+    "arrivalTime": "2024-11-03T17:34:56",
+    "price": 523.45
+  },
+  {
+    "departureAirport": "ATL",
+    "arrivalAirport": "ORD",
+    "departureTime": "2024-11-05T15:00:00",
+    "arrivalTime": "2024-11-05T18:00:00",
+    "price": 202.00
+  },
+  {
+    "departureAirport": "SEA",
+    "arrivalAirport": "MIA",
+    "departureTime": "2024-11-07T10:15:00",
+    "arrivalTime": "2024-11-07T14:15:00",
+    "price": 340.75
+  },
+  {
+    "departureAirport": "DEN",
+    "arrivalAirport": "DFW",
+    "departureTime": "2024-11-10T07:45:00",
+    "arrivalTime": "2024-11-10T11:45:00",
+    "price": 185.50
+  },
+  {
+    "departureAirport": "SFO",
+    "arrivalAirport": "LAS",
+    "departureTime": "2024-11-12T08:20:00",
+    "arrivalTime": "2024-11-12T10:20:00",
+    "price": 127.30
+  },
+  {
+    "departureAirport": "LAX",
+    "arrivalAirport": "JFK",
+    "departureTime": "2024-11-15T14:00:00",
+    "arrivalTime": "2024-11-15T22:00:00",
+    "price": 499.99
+  },
+  {
+    "departureAirport": "ORD",
+    "arrivalAirport": "ATL",
+    "departureTime": "2024-11-18T09:30:00",
+    "arrivalTime": "2024-11-18T12:30:00",
+    "price": 220.00
+  },
+  {
+    "departureAirport": "MIA",
+    "arrivalAirport": "SEA",
+    "departureTime": "2024-11-20T06:45:00",
+    "arrivalTime": "2024-11-20T11:45:00",
+    "price": 312.00
+  },
+  {
+    "departureAirport": "JFK",
+    "arrivalAirport": "SFO",
+    "departureTime": "2024-11-22T13:15:00",
+    "arrivalTime": "2024-11-22T19:15:00",
+    "price": 570.50
+  },
+  {
+    "departureAirport": "DFW",
+    "arrivalAirport": "DEN",
+    "departureTime": "2024-11-25T11:30:00",
+    "arrivalTime": "2024-11-25T15:30:00",
+    "price": 165.25
+  }
+]

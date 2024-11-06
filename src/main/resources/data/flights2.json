@@ -1,0 +1,44 @@
+[
+  {
+    "id": 14,
+    "departureAirport": {
+      "id": 1,
+      "cityName": "Tekirdağ"
+    },
+    "arrivalAirport": {
+      "id": 6,
+      "cityName": "Los Angeles"
+    },
+    "departureTime": "2024-10-20T14:30:00",
+    "arrivalTime": "2024-10-20T17:30:00",
+    "price": 299.99
+  },
+  {
+    "id": 16,
+    "departureAirport": {
+      "id": 6,
+      "cityName": "Los Angeles"
+    },
+    "arrivalAirport": {
+      "id": 1,
+      "cityName": "Tekirdağ"
+    },
+    "departureTime": "2024-10-20T14:30:00",
+    "arrivalTime": "2024-10-20T17:30:00",
+    "price": 299.99
+  },
+  {
+    "id": 17,
+    "departureAirport": {
+      "id": 1,
+      "cityName": "Tekirdağ"
+    },
+    "arrivalAirport": {
+      "id": 6,
+      "cityName": "Los Angeles"
+    },
+    "departureTime": "2024-10-20T14:30:00",
+    "arrivalTime": "2024-10-20T17:30:00",
+    "price": 299.99
+  }
+]
