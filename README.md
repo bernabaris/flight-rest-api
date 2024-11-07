@@ -8,6 +8,8 @@
 
 - **Flight Search**: Allows users to search for available flights based on various criteria.
 - **User Authentication**: Basic Authentication (Secure user registration and login.)
+- **Swagger Integration**: Simplifies API endpoint testing.
+
 
 ## Getting Started
 
