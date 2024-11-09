@@ -38,7 +38,7 @@
 5. Run the application:
    ```sh
    mvn spring-boot:run
-6Navigate to Swagger path in your browser to access the Swagger UI and test the API endpoints.
+6. Navigate to Swagger path in your browser to access the Swagger UI and test the API endpoints.
    ```bash
    http://localhost:8080/swagger-ui/index.html
    ```
