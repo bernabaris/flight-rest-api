@@ -43,4 +43,4 @@
    http://localhost:8080/swagger-ui/index.html
    ```
 
-This project was developed to learn java spring boot with my study coach @tunahansezen 💫 
+This project was developed to learn java spring boot with my supportive study coach @tunahansezen 💫 
