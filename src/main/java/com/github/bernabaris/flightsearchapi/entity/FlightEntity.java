@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 @Table(name = "Flight")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class FlightEntity {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
